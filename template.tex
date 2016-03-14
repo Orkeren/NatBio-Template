@@ -1,0 +1,77 @@
+
+% Document class: article with font size 11pt
+% ---------------
+\documentclass[11pt,a4paper]{article}
+
+\setlength{\textwidth}{165mm}
+\setlength{\textheight}{240mm}
+\setlength{\parindent}{0mm} % S{\aa} meget rykkes ind efter afsnit
+\setlength{\parskip}{\baselineskip}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\hoffset}{-2.5mm}
+\setlength{\voffset}{0mm}
+\setlength{\footskip}{15mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\topmargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+
+\usepackage[a4paper, hmargin={2.8cm, 2.8cm}, vmargin={2.5cm, 2.5cm}]{geometry}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage{eso-pic} % \AddToShipoutPicture
+\usepackage{float} % This will allow precise picture placement, use [H].
+
+
+% Call packages
+% ---------------
+\usepackage{comment} %Possible to comment larger sections
+%http://get-software.net/macros/latex/contrib/comment/comment.pdf
+\usepackage[T1]{fontenc} %oriented to output, that is, what fonts to use for printing characters.
+\usepackage[utf8]{inputenc} %allows the user to input accented characters directly from the keyboard
+\usepackage{lmodern}
+
+% Change english to danish, if you want danish localization (date, figures, etc)
+\usepackage[english]{babel}														     % English
+
+
+\usepackage[protrusion=true,expansion=true]{microtype}				                 % Better typography
+%http://www.khirevich.com/latex/microtype/
+\usepackage[pdftex]{graphicx} %puts to pdf and graphic
+%http://www.kwasan.kyoto-u.ac.jp/solarb6/usinggraphicx.pdf
+\usepackage{parskip} %http://www.ctan.org/pkg/parskip
+%http://tex.stackexchange.com/questions/51722/how-to-properly-code-a-tex-file-or-at-least-avoid-badness-10000
+%Never use \\ but instead press "enter" twice. See second website for more info
+
+
+
+\author{
+  \Large{
+    Surname, Given Name (\href{mailto:user@domain.tld}{user@domain.tld}) - bcd123} \\
+  \Large{
+  	 Surname 2, Given Name 2 (\href{mailto:user2@domain.tld}{user2@domain.tld}) - fgh456} \\
+}
+\date{\today}
+
+\title{
+  \huge{Course Name\\}
+\vspace{3cm}
+\Large{Title}
+}
+
+\begin{document}
+
+%look in the include folder for options. I recommen only changeing the third option to "include/nat-dk" if you wnat the university and faculty infomation to be in danish.
+\AddToShipoutPicture*{\put(0,0){\includegraphics*[viewport=0 0 700 600]{include/natbio-farve}}}
+\AddToShipoutPicture*{\put(0,602){\includegraphics*[viewport=0 600 700 1600]{include/natbio-farve}}}
+
+\AddToShipoutPicture*{\put(0,0){\includegraphics*{include/nat-en}}}
+
+\clearpage\maketitle
+\thispagestyle{empty}
+
+\clearpage\newpage
+\thispagestyle{plain}
+
+\section{Section Title}
+
+\end{document}
